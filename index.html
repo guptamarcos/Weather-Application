@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"/>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="input-box">
+        <input type="text" placeholder="Enter Your Location" id="input-text" />
+        <button class="fa-solid fa-magnifying-glass" id="search-btn"></button>
+      </header>
+      <main class="content-box hide">
+        <img src="/assets/Cloud.png" alt="Weather-Image" id="Weather-Image">
+        <p class="temperature">
+          24<sup>.</sup>C
+        </p>
+        <p class="Weather">Scattered Clouds</p>
+        <section class="Weather-data">
+          <div class="humidity">
+            <figure class="fa-solid fa-droplet"></figure>
+            <div>
+              <span id="Humidity-val">73%</span> <br/>
+              <span id="Humidity-text">Humidity</span>
+            </div>
+          </div>
+          <div class="windSpeed">
+            <figure class="fa-solid fa-wind"></figure>
+            <div>
+              <span id="windSpeed-val">3.09Km/h</span> <br/>
+              <span id="windSpeed-text">wind Speed</span>
+            </div>
+          </div>
+        </section>
+      </main>
+      <main class="error-box hide">
+        <p class="error-text">Sorry, Location not found!!!</p>
+        <img src="/assets/404.png" alt="error-img"/>
+      </main>
+    </div>
+  </body>
+</html>
