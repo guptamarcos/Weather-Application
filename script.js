@@ -28,7 +28,7 @@ function setWeatherImage(weatherVal){
 }
 
 function setWeather(city){
-    const api_key = "860bbfd24bc57fcba394fde34a723b2f";
+    const api_key = "";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
     fetch(url)
     .then((res)=> {
