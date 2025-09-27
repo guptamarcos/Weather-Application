@@ -5,30 +5,19 @@ const inputText = document.querySelector("#input-text");
 const humidityVal = document.querySelector("#Humidity-val");
 const windSpeedVal = document.querySelector("#windSpeed-val");
 const temperature = document.querySelector(".temperature");
-const weather = document.querySelector(".Weather");
 const weatherImage = document.querySelector("#Weather-Image");
 
-function setWeatherImage(weatherVal){
-    if(weatherVal === "Clear"){
-        weatherImage.src = "./assets/Clear.png";
-    }
-    else if(weatherVal === "Clouds"){
-        weatherImage.src = "./assets/Cloud.png";
-    }
-    else if(weatherVal === "Mist"){
-        weatherImage.src = "./assets/Mist.png";
-    }
-    else if(weatherVal === "Rain"){
-        weatherImage.src = "./assets/Rain.png";
-    }
-    else if(weatherVal === "Snow"){
-        weatherImage.src = "./assets/Snow.png";
-    }
-    weather.textContent = weatherVal;
+
+const weather = {
+    "Clear": "./assets/Clear.png",
+    "Clouds": "./assets/Cloud.png",
+    "Mist": "./assets/Mist.png",
+    "Rain": "./assets/Rain.png",
+    "Snow": "./assets/Snow.png",
 }
 
 function setWeather(city){
-    const api_key = "";
+    const api_key = "860bbfd24bc57fcba394fde34a723b2f";;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
     fetch(url)
     .then((res)=> {
@@ -43,7 +32,7 @@ function setWeather(city){
         humidityVal.textContent = `${data.main.humidity}%`
         errorBox.classList.add("hide");
         contentBox.classList.remove("hide");
-        setWeatherImage(data.weather[0].main);
+        weatherImage.src = weather[data.weather[0].main];
     })
     .catch((err)=> {
         contentBox.classList.add("hide");
