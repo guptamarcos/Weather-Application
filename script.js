@@ -10,19 +10,19 @@ const weatherImage = document.querySelector("#Weather-Image");
 
 function setWeatherImage(weatherVal){
     if(weatherVal === "Clear"){
-        weatherImage.src = "/assets/Clear.png";
+        weatherImage.src = "./assets/Clear.png";
     }
     else if(weatherVal === "Clouds"){
-        weatherImage.src = "/assets/Cloud.png";
+        weatherImage.src = "./assets/Cloud.png";
     }
     else if(weatherVal === "Mist"){
-        weatherImage.src = "/assets/Mist.png";
+        weatherImage.src = "./assets/Mist.png";
     }
     else if(weatherVal === "Rain"){
-        weatherImage.src = "/assets/Rain.png";
+        weatherImage.src = "./assets/Rain.png";
     }
     else if(weatherVal === "Snow"){
-        weatherImage.src = "/assets/Snow.png";
+        weatherImage.src = "./assets/Snow.png";
     }
     weather.textContent = weatherVal;
 }
